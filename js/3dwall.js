@@ -25,6 +25,8 @@
     });
 
     window.addEventListener('resize', resizeHandler); // 창의 크기가 변해도 일정하게 비율을 유지
+
+    resizeHandler(); // maxScrollValue 값을 선언하기 위해
     
     stageElem.addEventListener('click', function (e) {
         new Character({
@@ -38,6 +40,6 @@
         document.body.setAttribute('data-char', value);
     });
 
-    resizeHandler(); // maxScrollValue 값을 선언하기 위해
+    
 
 })();
