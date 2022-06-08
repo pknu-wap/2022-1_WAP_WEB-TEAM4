@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/calendar.css">
+    <title>Calendar | 3D Calendar</title>
+    
+</head>
+<body onload="autoReload();">
+    
+    <table align="center" id="calendar">
+		<div id="goMain">
+			<a href="../main.html"><h2>3D Calendar</h2></a>
+		</div>
+       
+			<tr class="top">
+				<td id="beforemonthtd">
+					<div id="beforemonth">
+						<a id="before" href="javascript:beforem()"></a>
+					</div>
+				</td>
+				<td id="nextmonthtd">
+					<div id="nextmonth">
+						<a id="next" href="javascript:nextm()"></a>
+					</div>
+				</td>
+				<td id="yearmonthtd" colspan="4" align="center">
+					<div id="yearmonth"></div>
+				</td>
+				<td>
+				<a href="javascript:thisMonth()">오늘</a>
+				</td>
+			</tr>
+			<tr class="days"> 
+				<td width="14%"> 월 </td>
+				<td width="14%"> 화 </td>
+				<td width="14%"> 수 </td>
+				<td width="14%"> 목 </td>
+				<td width="14%"> 금 </td>
+				<td width="14%"><font color="#009de0">토</font></td>
+				<td width="14%"><font color="#ed5353">일</font></td> 
+				
+			</tr>
+	</table>
+    
+    <script src="../js/calendar.js"></script>
+
+</body>
+</html>

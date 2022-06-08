@@ -1,0 +1,87 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgb(13, 23, 34);
+}
+
+.login-form {position: relative; z-index: 2;}
+.login-form h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 60px;
+  color: white;
+}
+
+/* 뱅글뱅글 돌아가는 애니메이션
+@keyframes calendar-ani {
+    to {
+        background-position: -972.5px 0;
+    }
+}
+.image {
+    position: absolute;
+    top: -170px;
+    left: 125px;
+    width: 150px;
+    height: 150px;
+    background: url('../images/3d_calendar2.png') no-repeat 0 0 / auto 150px;
+    animation: calendar-ani 4s infinite steps(6);
+} */
+
+.login-form a { color: white; text-decoration: none;}
+
+
+.int-area {
+  width: 400px; position: relative;
+  margin-top: 20px;
+  color: white;
+}
+
+.int-area:first-child {margin-top: 0;}
+.int-area input{
+  width: 100%;
+  padding: 20px 10px 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #999;
+  font-size: 18px;
+  color: white;
+}
+
+.int-area label {
+  position: absolute; left: 10px; top: 15px;
+  font-size: 16px;
+  transition: all .5s ease;
+}
+
+.int-area input:focus + label,
+.int-area input:valid + label {
+  top: -2px;
+  font-size: 13px; color: #166cea;
+}
+
+.btn-area {margin-top: 30px;}
+.btn-area button{
+  width: 100%; height: 50px;
+  background: #166cea;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.caption {
+  margin-top: 20px;
+  text-align: center;
+}
+.caption a{
+  font-size: 15px;
+  color: #999;
+  text-decoration: none;
+}

@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(13, 23, 34);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+table {
+    width: 800px;
+    height: 700px;
+    border: 1px solid white;
+    border-collapse: collapse;
+    color: white;
+    margin-top: 50px;
+}
+
+td {
+    text-align: center;
+}
+
+.top {
+    height: 85px;
+}
+.days {
+    border: 1px solid white;
+    height: 60px;
+}
+
+#goMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#beforemonthtd {
+    width: auto;
+}
+#yearmonthtd {
+    width: auto;
+}
+#nextmonthtd {
+    width: auto;
+}
+#beforemonth {
+    width: 280%;
+    text-align: right;
+}
+#yearmonth {
+    font-size: 20px;
+    width: 74%;
+}
+#nextmonth {
+    width: 335%;
+    text-align: right;
+}

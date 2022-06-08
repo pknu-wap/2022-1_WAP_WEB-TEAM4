@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <title>peanut | 3D Calendar</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&family=Jua&family=Montserrat:wght@500&family=Nanum+Pen+Script&family=Roboto+Mono:wght@300&display=swap');
+
+    *  {
+        font-family: 'Jua', sans-serif;
+    
+    }
+        .clickGame{
+            background: yellowgreen;
+            }
+       .clickGame img {
+           border: solid 5px black;
+    
+       }
+      
+       .writeYouImage {
+        background-color: yellowgreen;
+    
+       }
+       .writeYouImage img {
+           border: solid 5px black;
+    
+       }
+      
+    
+        img {
+            max-width: 100%;
+        }
+        .content {
+            /* viewport height */
+            height: 500vh;
+            padding: 20%;
+        }
+        .output {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            font-size: 2rem;
+            font-weight: 200;
+            color: #fff;
+            background: rgba(18, 17, 17, 0.904);
+        }
+        .peanut {
+            width: 100px;
+            margin: 20px auto;
+            transition: 1s;
+        }
+        .peanut2 {
+            width: 100px;
+            margin: 20px auto;
+            transition: 1s;
+        }   
+         .peanut3 {
+            width: 100px;
+            margin: 20px auto;
+            transition: 1s;
+        }
+        .peanut.zoom {
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body>
+    <div class="output">output</div>
+    <div class="content">
+        <div class="clickGame">
+            <h1>ClickGame</h1>
+            <a href="../html/peanut.html">
+            <img src = "../images/clickgame.png" alt="게임화면">
+            </a>
+            </div>
+        <figure class="peanut">
+            <a href = "html/peanut.html"></a>
+            <img src="../images/peanut.png" alt="땅콩">
+        </figure>
+
+        <div class="writeYouImage">
+            <h1>UpLoad your days</h1>
+            <a href = "../html/float_image.html">
+            <img src = "../images/uploadImage.png" width = 100% alt="게임화면">
+            </a>
+        </div>  
+    </div>
+    <script type="text/javascript" src="../js/page.js"></script>
+</body>
+</html>

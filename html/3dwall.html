@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Space | 3D Calendar</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="../css/3dwall.css">
+</head>
+<body>
+    <div class="progress-bar-con">
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="world">
+        <div class="stage">
+
+            <div class="goCalendar">
+                <a href="calendar.html">
+                    <h2>이전으로</h2>
+                </a>
+            </div>
+
+        <!-- 캐릭터랑 stage를 함께 감쌀 컨테이너가 필요해서 만든 class   -->
+            <div class="house">
+                <section class="wall wall-left"></section>
+                <section class="wall wall-right"></section>
+
+                <section class="wall wall-front">
+                    
+                    <div class="weather" id="weather">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="todo">
+                        <form id="todo-form">
+                            <input type="text" placeholder="Write a To Do and Press Enter" required />
+                        </form>
+                        <ul id="todo-list"></ul>
+                    </div>
+
+                </section>
+
+            </div>
+            <!--// house -->
+            <!-- 캐릭터 놓이는 곳 -->
+        </div>
+        <!--// stage -->
+    </div>
+    <!--// world -->
+    <script src="../js/3dwall.js"></script>
+    <script src="../js/character.js"></script>
+    <script src="../js/weather.js"></script>
+    <script src="../js/todo.js"></script>
+</body>
+</html>

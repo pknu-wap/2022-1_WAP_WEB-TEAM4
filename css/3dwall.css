@@ -1,0 +1,211 @@
+body {
+    height: 500vw;
+    font-family: 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', NanumGothic, 'Malgun Gothic', sans-serif;
+    -webkit-overflow-scrolling: touch;
+    color: #555;
+    background-color: rgb(19, 33, 47);
+    transition: background .5s;
+}
+
+.goCalendar {
+    position: absolute;
+    top: 7%;
+    left: 47%;
+}
+
+a {
+    text-decoration: none;
+    color:darkgray;
+}
+
+/* 3d 공간 */
+.world {
+    position: fixed; /* 스크롤을 올리더라도 화면이 내려가지 않고 고정시킴 */
+    left: 0;
+    top: 0;
+    width: 100vw; /* %보다 정확함 */
+    height: 100vh;
+    perspective: 1000px; /* css 3D 효과, 원근 적용 */
+}
+.stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d; /* world와 house를 이어주는 3D효과 */
+}
+.house {
+    width: 100vw;
+    height: 100vh;
+    transform: translateZ(-420vw);
+    transform-style: preserve-3d; /* stage와 wall을 이어주는 3D효과 */
+}
+.wall {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255);
+}
+.wall-left {
+    width: 1000vw; /* 길이 늘리기 */
+    background-color: rgb(228, 228, 228);
+    transform: rotateY(90deg) translateZ(-500vw); /* 90도 돌린다음에 중간 벽에 붙이기 위해 */
+}
+.wall-right {
+    width: 1000vw; /* 길이 늘리기 */
+    background-color: rgb(228, 228, 228);
+    transform: rotateY(90deg) translateZ(-400vw);
+}
+.wall-front { 
+    transform: translateZ(300vw);
+}
+
+/* progress-bar */
+.progress-bar-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100; /* 옆에 흰 벽에 끼지 않도록 */
+    width: 100vw;
+    height: 5px;
+    background: #555;
+}
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: #00a8ff;
+}
+
+/* todo */
+.todo {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    font-size: 2rem;
+}
+
+/* weather */
+.weather{
+    position: absolute;
+    top: 7%;
+    left: 77%;
+    font-size: 1.8rem;
+}
+
+/* 애니메이션 */
+@keyframes ani-head {
+    to { transform: rotateX(-10deg); }
+}
+@keyframes ani-running-leg {
+    from {
+        transform: rotateX(-30deg);
+    }
+    to {
+        transform: rotateX(30deg);
+    }
+}
+@keyframes ani-running-arm {
+    from {
+        transform: rotateY(30deg);
+    }
+    to {
+        transform: rotateY(-30deg);
+    }
+}
+
+/* 캐릭터 */
+.character {
+    position: absolute;
+    left: 12%;
+    bottom: 5%;
+    width: 10vw;
+    height: 15.58vw;
+    transform-style: preserve-3d;
+}
+.character[data-direction='forward'] { transform: rotateY(180deg); }
+.character[data-direction='backward'] { transform: rotateY(0deg); }
+.character[data-direction='left'] { transform: rotateY(-90deg); }
+.character[data-direction='right'] { transform: rotateY(90deg); }
+.character-face-con {
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+.character-face {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.character-face.face-back {
+    transform: rotateY(180deg);
+}
+.character-head {
+    left: calc(42 / 856 * 100%);
+    top: 0;
+    z-index: 60;
+    width: calc(770 / 856 * 100%);
+    height: calc(648 / 1334 * 100%);
+    transform-origin: center bottom;
+    animation: ani-head 0.6s infinite alternate cubic-bezier(0.46, 0.18, 0.66, 0.93);
+}
+.character-head-face.face-front { background-image: url('../images/ilbuni_head_front.png'); }
+.character-head-face.face-back { background-image: url('../images/ilbuni_head_back.png'); }
+.character-torso {
+    left: calc(208 / 856 * 100%);
+    top: calc(647 / 1334 * 100%);
+    z-index: 50;
+    width: calc(428 / 856 * 100%);
+    height: calc(385 / 1334 * 100%);
+    transform-origin: center center;
+}
+.character-torso-face.face-front { background-image: url('../images/ilbuni_body_front.png'); }
+.character-torso-face.face-back { background-image: url('../images/ilbuni_body_back.png'); }
+.character-arm-right {
+    left: 0;
+    top: calc(500 / 1334 * 100%);
+    width: calc(244 / 856 * 100%);
+    height: calc(307 / 1334 * 100%);
+    transform-origin: right top;
+}
+.character-arm-right .face-front { background-image: url('../images/ilbuni_arm_0.png'); }
+.character-arm-right .face-back { background-image: url('../images/ilbuni_arm_1.png'); }
+.character-arm-left {
+    left: calc(600 / 856 * 100%);
+    top: calc(500 / 1334 * 100%);
+    width: calc(244 / 856 * 100%);
+    height: calc(307 / 1334 * 100%);
+    transform-origin: left top;
+}
+.character-arm-left .face-front { background-image: url('../images/ilbuni_arm_1.png'); }
+.character-arm-left .face-back { background-image: url('../images/ilbuni_arm_0.png'); }
+.character-leg-right {
+    left: calc(200 / 856 * 100%);
+    top: calc(1031 / 1334 * 100%);
+    width: calc(230 /  856 * 100%);
+    height: calc(300 / 1334 * 100%);
+    transform-origin: center top;
+}
+.character-leg-right .face-front { background-image: url('../images/ilbuni_leg_0.png'); }
+.character-leg-right .face-back { background-image: url('../images/ilbuni_leg_1.png'); }
+.character-leg-left {
+    left: calc(414 / 856 * 100%);
+    top: calc(1031 / 1334 * 100%);
+    width: calc(230 /  856 * 100%);
+    height: calc(300 / 1334 * 100%);
+    transform-origin: center top;
+}
+.character-leg-left .face-front { background-image: url('../images/ilbuni_leg_1.png'); }
+.character-leg-left .face-back { background-image: url('../images/ilbuni_leg_0.png'); }
+.character.running .character-leg-right { animation: ani-running-leg 0.2s alternate infinite linear; }
+.character.running .character-leg-left { animation: ani-running-leg 0.2s alternate-reverse infinite linear; }
+.character.running .character-arm { animation: ani-running-arm 0.2s alternate infinite linear; }
